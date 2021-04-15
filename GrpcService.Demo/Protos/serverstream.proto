@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService.Demo.Protos";
+
+service SampleStreamingService {
+  // Sends a greeting.. use stream with the param to enable streaming. since its with response we stream from the server
+  rpc SayHello (StreamRequest) returns (stream StreamReply);
+}
+
+// The request message containing the user's name.
+message StreamRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message StreamReply {
+  string message = 1;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService.Demo.Protos";
+
+package demogrpcserve;
+
+// The greeting service definition.
+service SampleService {
+  // Sends a greeting
+  rpc SayHello (SampleRequest) returns (HelloReply);
+}
+
+// The request message containing the user's name.
+message SampleRequest {
+  string name = 1;
+  int32 age=2;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+
