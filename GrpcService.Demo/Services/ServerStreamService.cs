@@ -11,6 +11,9 @@ namespace GrpcService.Demo.Services
         {
             for (int i = 0; i < 10; i++)
             {
+                //check for cancellation
+                if (context.CancellationToken.IsCancellationRequested) break;
+
                 await responseStream.WriteAsync(new StreamReply { Message = $"{request.Name} - iteration :  {i}" });
                 await Task.Delay(1500);
             }
