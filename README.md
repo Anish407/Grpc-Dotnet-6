@@ -1,2 +1,2 @@
 # Grpc-Demo
-Unary and server streaming. Pending: Biderectional, authentication, authorization
+Unary and server streaming, client streaming. Pending: Biderectional, authentication, authorization
