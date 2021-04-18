@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+
+option csharp_namespace = "GrpcService.Demo.client.Protos";
+
+package clientstreamdemopackage;
+
+service ClientStreamerDemoService{
+ rpc SendMultiple (stream ClientStreamRequest) returns (ClientStreamReply);
+}
+
+// The request message containing the user's name.
+message ClientStreamRequest {
+  string name = 1;
+  int32 age=2;
+}
+enum Gender{
+	male=0;
+	female=2;
+}
+
+// The response message containing the greetings.
+message ClientStreamReply{ 
+ repeated  string message = 1;
+}

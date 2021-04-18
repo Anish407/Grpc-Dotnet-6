@@ -7,10 +7,12 @@
 
   <ItemGroup>
     <Compile Remove="Program.cs" />
+    <Compile Remove="ServerStreamProgram.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Program.cs" />
+    <None Include="ServerStreamProgram.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="..\GrpcService.Demo\Protos\clientstream.proto" GrpcServices="Client">
+      <Link>Protos\clientstream.proto</Link>
+    </Protobuf>
     <Protobuf Include="..\GrpcService.Demo\Protos\greet.proto" GrpcServices="Client">
       <Link>Protos\greet.proto</Link>
     </Protobuf>
